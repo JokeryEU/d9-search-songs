@@ -15,10 +15,8 @@ const Details = () => {
   useEffect(() => {
     (async () => {
       try {
-        const resp = await fetch(
-          `${process.env.REACT_APP_API_URL}/track/${id}`
-        );
-        const data = await resp.json();
+        const res = await fetch(`${process.env.REACT_APP_API_URL}/track/${id}`);
+        const data = await res.json();
         console.log(data);
         setTrack(data);
       } catch (error) {
