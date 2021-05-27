@@ -40,6 +40,7 @@ const Details = () => {
               <Card.Title>{track?.title}</Card.Title>
               <Card.Text>
                 <a href={track?.preview}>Preview</a>
+                <p>{track?.duration} mins</p>
               </Card.Text>
             </Card.Body>
           </Card>

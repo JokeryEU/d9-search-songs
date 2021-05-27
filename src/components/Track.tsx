@@ -1,6 +1,6 @@
 import { ISearch } from "../types/deezer";
 import { Image, ListGroup, Button } from "react-bootstrap";
-import { useHistory } from "react-router";
+import { useHistory } from "react-router-dom";
 
 interface TrackProps {
   track: ISearch;
