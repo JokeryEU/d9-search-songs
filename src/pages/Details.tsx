@@ -36,7 +36,7 @@ const Details = () => {
               alt="albumCover"
             />
             <Card.Body>
-              <Card.Title>{track?.artist.name}</Card.Title>
+              <Card.Title className="fw-bold">{track?.artist.name}</Card.Title>
               <Card.Title>{track?.title}</Card.Title>
               <Card.Text>
                 <a href={track?.preview}>Preview</a>
