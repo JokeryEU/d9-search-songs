@@ -1,7 +1,7 @@
 import { Col, Container, Row, Card } from "react-bootstrap";
 import { ITrack } from "../types/deezer";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useParams } from "react-router-dom";
 
 type MusicParams = {
   id: string;
