@@ -1,7 +1,7 @@
 import { Col, Container, Row, Card } from "react-bootstrap";
 import { ITrack } from "../types/deezer";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 type MusicParams = {
   id: string;
@@ -9,6 +9,8 @@ type MusicParams = {
 const Details = () => {
   const { id } = useParams<MusicParams>();
   const [track, setTrack] = useState<ITrack>();
+
+  const history = useHistory();
 
   useEffect(() => {
     (async () => {
@@ -29,6 +31,13 @@ const Details = () => {
     <Container>
       <Row>
         <Col>
+          <h4
+            className="fw-bold mt-4"
+            style={{ cursor: "pointer" }}
+            onClick={() => history.push("/")}
+          >
+            Home
+          </h4>
           <Card className="mt-5 mx-auto" style={{ width: "30rem" }}>
             <Card.Img
               variant="top"
@@ -40,7 +49,7 @@ const Details = () => {
               <Card.Title>{track?.title}</Card.Title>
               <Card.Text>
                 <a href={track?.preview}>Preview</a>
-                <p>{track?.duration} mins</p>
+                <span className="ms-3">{track?.duration} sec</span>
               </Card.Text>
             </Card.Body>
           </Card>
