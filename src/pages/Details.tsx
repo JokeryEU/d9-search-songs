@@ -29,13 +29,13 @@ const Details = () => {
     <Container>
       <Row>
         <Col>
-          <h4
+          <h3
             className="fw-bold mt-4"
             style={{ cursor: "pointer" }}
             onClick={() => history.push("/")}
           >
             Home
-          </h4>
+          </h3>
           <Card className="mt-5 mx-auto" style={{ width: "30rem" }}>
             <Card.Img
               variant="top"

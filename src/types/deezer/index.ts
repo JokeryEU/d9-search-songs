@@ -17,6 +17,21 @@ export interface ISearch {
   type: string;
 }
 
+export interface IArtist {
+  id: number;
+  name: string;
+  link: string;
+  share: string;
+  picture: string;
+  picture_small: string;
+  picture_medium: string;
+  picture_big: string;
+  picture_xl: string;
+  radio: boolean;
+  tracklist: string;
+  type: string;
+}
+
 export interface IContributor {
   id: number;
   name: string;
@@ -58,21 +73,6 @@ export interface ITrack {
   md5_image: string;
   artist: IArtist;
   album: IAlbum;
-  type: string;
-}
-
-export interface IArtist {
-  id: number;
-  name: string;
-  link: string;
-  share: string;
-  picture: string;
-  picture_small: string;
-  picture_medium: string;
-  picture_big: string;
-  picture_xl: string;
-  radio: boolean;
-  tracklist: string;
   type: string;
 }
 
