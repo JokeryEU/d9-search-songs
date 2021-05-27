@@ -1,8 +1,8 @@
-import { useState } from "react";
 import { Container, Jumbotron, Spinner } from "react-bootstrap";
 import Search from "../components/Search";
 import TrackList from "../components/TackList";
 import { ISearch } from "../types/deezer";
+import { useState } from "react";
 
 const Home = () => {
   const [tracks, setTracks] = useState<ISearch[]>([]);

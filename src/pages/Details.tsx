@@ -1,5 +1,52 @@
+import { Col, Container, Row, Card } from "react-bootstrap";
+import { ITrack } from "../types/deezer";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router";
+
+type MusicParams = {
+  id: string;
+};
 const Details = () => {
-  return <h1>Details</h1>;
+  const { id } = useParams<MusicParams>();
+  const [track, setTrack] = useState<ITrack>();
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const resp = await fetch(
+          `${process.env.REACT_APP_API_URL}/track/${id}`
+        );
+        const data = await resp.json();
+        console.log(data);
+        setTrack(data);
+      } catch (error) {
+        console.log(error);
+      }
+    })();
+  }, [id]);
+
+  return (
+    <Container>
+      <Row>
+        <Col>
+          <Card className="mt-5 mx-auto" style={{ width: "30rem" }}>
+            <Card.Img
+              variant="top"
+              src={track?.album.cover_medium}
+              alt="albumCover"
+            />
+            <Card.Body>
+              <Card.Title>{track?.artist.name}</Card.Title>
+              <Card.Title>{track?.title}</Card.Title>
+              <Card.Text>
+                <a href={track?.preview}>Preview</a>
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </Col>
+      </Row>
+    </Container>
+  );
 };
 
 export default Details;
